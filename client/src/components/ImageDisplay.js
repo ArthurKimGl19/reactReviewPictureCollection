@@ -12,8 +12,16 @@ const convertImageSize = (imageUrl) => {
   return urlArr.join('');
 }
 
-/*
-  <div id="imageDisplay" className="container">
-    <img src='https://images.unsplash.com/photo-1506780685701-ba404b9e640d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=100' alt=""/>
-  </div>
-*/
+import React from 'react';
+
+var ImageDisplay = ({ bigPicture }) => {
+  return (
+    <div id="imageDisplay" className="container">
+      {bigPicture.map((bigPic, index) => (
+        <img src={bigPic.urls.small} key={index} alt=""/>
+      ))}
+  </div>   
+  )
+}
+
+export default ImageDisplay;
